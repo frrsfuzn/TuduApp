@@ -1,6 +1,6 @@
+import { AnimatePresence } from "framer-motion";
 import React from "react";
 import TodoItem from "../molecules/todoItem";
-import { AnimatePresence } from "framer-motion";
 
 interface ITodoItem {
   id: number;

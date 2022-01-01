@@ -1,7 +1,7 @@
+import { motion } from "framer-motion";
+import Button from "../atoms/button";
 import CheckBox from "../atoms/checkBox";
 import Text from "../atoms/text";
-import Button from "../atoms/button";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface ITodoItem {
   id: number;
