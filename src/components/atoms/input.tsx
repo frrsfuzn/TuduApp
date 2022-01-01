@@ -11,7 +11,7 @@ const Input = ({ value, onChange }: IInput): JSX.Element => {
       type="text"
       value={value}
       onChange={onChange}
-      className="text-slate-300 bg-transparent focus:outline-none focus:text-white mr-3"
+      className="w-full text-slate-300 bg-transparent focus:outline-none focus:text-white mr-3"
       placeholder="Add Todo"
     />
   );
