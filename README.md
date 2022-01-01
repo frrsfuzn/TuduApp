@@ -1,6 +1,6 @@
 # Tudu App
 
-This project is a Todo app to list all your todolist. This project use tailwindcss, reactjs, and react-router-dom
+This project is a Todo app to list all your todolist. This project use tailwindcss, reactjs, framer-motion and react-router-dom
 
 ### `npm start`
 

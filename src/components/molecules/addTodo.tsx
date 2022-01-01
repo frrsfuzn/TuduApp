@@ -10,8 +10,10 @@ const AddTodo = ({ addTodo }: IAddTodo): JSX.Element => {
   const [title, setTitle] = useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addTodo(title);
-    setTitle("");
+    if (title !== "") {
+      addTodo(title);
+      setTitle("");
+    }
   };
   return (
     <form
@@ -19,7 +21,7 @@ const AddTodo = ({ addTodo }: IAddTodo): JSX.Element => {
       className="flex flex-row justify-evenly px-3 items-center bg-gradient-to-r from-cyan-800 to-sky-800 h-12 rounded-lg w-full shadow-md text-white"
     >
       <Input value={title} onChange={(e) => setTitle(e.target.value)} />
-      <Button>Add</Button>
+      <Button isDisabled={title === ""}>Add</Button>
     </form>
   );
 };

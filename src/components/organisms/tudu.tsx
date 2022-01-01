@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import AddTodo from "../molecules/addTodo";
 import Navbar from "../molecules/navbar";
 import ActiveTodos from "./activeTodos";
@@ -15,6 +16,7 @@ interface ITodoItem {
 const Tudu = () => {
   const [todos, setTodos] = useState<ITodoItem[]>([
     { id: Date.now(), title: "Mandi", completed: false },
+    { id: Date.now() + 1, title: "Sholat", completed: false },
   ]);
 
   const newTodo = (title: string): ITodoItem => {
@@ -40,7 +42,7 @@ const Tudu = () => {
 
   return (
     <Router>
-      <div className="bg-gradient-to-r from-cyan-700 to-sky-700 w-72 h-80 rounded-lg p-3 overflow-auto">
+      <div className="bg-gradient-to-r from-cyan-700 to-sky-700 w-72 h-80 rounded-lg p-3 overflow-y-scroll overflow-x-hidden">
         <Navbar />
         <Routes>
           <Route
