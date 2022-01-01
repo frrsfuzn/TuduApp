@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 interface IInput {
   onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;

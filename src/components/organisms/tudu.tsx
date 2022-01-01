@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "../molecules/navbar";
-import TodoItem from "../molecules/todoItem";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AddTodo from "../molecules/addTodo";
-import AllTodos from "./allTodos";
+import Navbar from "../molecules/navbar";
 import ActiveTodos from "./activeTodos";
+import AllTodos from "./allTodos";
 import CompleteTodos from "./completeTodos";
 
 interface ITodoItem {
