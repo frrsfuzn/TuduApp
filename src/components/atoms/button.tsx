@@ -2,11 +2,22 @@ import React from "react";
 
 interface IButton {
   children: React.ReactNode;
+  isDisabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
-const Button = ({ children }: IButton): JSX.Element => {
+const Button = ({
+  children,
+  isDisabled = false,
+  onClick,
+}: IButton): JSX.Element => {
+  let styleClass = `rounded-full px-3 py-1 shadow-md  disabled:cursor-default ${
+    isDisabled
+      ? "bg-sky-900 text-slate-300 opacity-30"
+      : "bg-gradient-to-r from-cyan-900 to-sky-900 hover:from-cyan-700 hover:to-sky-700"
+  }`;
   return (
-    <button className="rounded-full bg-slate-500 px-3 py-1 shadow-md bg-gradient-to-r from-cyan-900 to-sky-900 hover:bg-gradient-to-r hover:from-cyan-700 hover:to-sky-700">
+    <button onClick={onClick} disabled={isDisabled} className={styleClass}>
       {children}
     </button>
   );

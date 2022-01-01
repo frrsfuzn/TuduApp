@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 
-const Input = () => {
-  const [value, setValue] = useState("");
+interface IInput {
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
+  value?: string;
+}
+
+const Input = ({ value, onChange }: IInput): JSX.Element => {
   return (
     <input
       type="text"
       value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={onChange}
       className="text-slate-300 bg-transparent focus:outline-none focus:text-white mr-3"
       placeholder="Add Todo"
     />
