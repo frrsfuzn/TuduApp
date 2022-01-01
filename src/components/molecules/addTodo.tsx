@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../atoms/button";
 import Input from "../atoms/input";
 
-const AddTodo = (): JSX.Element => {
+interface IAddTodo {
+  addTodo: (title: string) => void;
+}
+
+const AddTodo = ({ addTodo }: IAddTodo): JSX.Element => {
+  const [title, setTitle] = useState("");
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert("oke");
+    addTodo(title);
+    setTitle("");
   };
   return (
     <form
       onSubmit={handleSubmit}
       className="flex flex-row justify-evenly px-3 items-center bg-gradient-to-r from-cyan-800 to-sky-800 h-12 rounded-lg w-full shadow-md text-white"
     >
-      <Input />
+      <Input value={title} onChange={(e) => setTitle(e.target.value)} />
       <Button>Add</Button>
     </form>
   );
