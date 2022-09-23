@@ -16,6 +16,7 @@ const Tudu = () => {
   const [todos, setTodos] = useState<ITodoItem[]>([
     { id: Date.now(), title: "Mandi", completed: false },
     { id: Date.now() + 1, title: "Sholat", completed: false },
+    { id: Date.now() + 2, title: "Jogging", completed: false},
   ]);
 
   const newTodo = (title: string): ITodoItem => {
